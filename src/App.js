@@ -1,34 +1,25 @@
 import "./App.css";
 
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Navbar from "./components/Navbar";
 import News from "./components/News";
 import LoadingBar from "react-top-loading-bar";
 
-export default class App extends Component {
-  state = {
-    query: "world",
-    progress: 10
-  };
+const App = () => {
+  const [query, setquery] = useState("world");
+  const [progress, setprogress] = useState(10);
 
-  setProgress = (p) => {
-    this.setState({progress: p});
-  }
+  return (
+    <>
+      <LoadingBar
+        color="#a25e36"
+        progress={progress}
+        onLoaderFinished={() => setprogress(0)}
+      />
+      <Navbar querySelect={setquery} />
+      <News query={query} setProgress={setprogress} />
+    </>
+  );
+};
 
-  updateQuery = (newQuery) => {
-    this.setState({ query: newQuery });
-  };
-  render() {
-    return (
-      <>
-        <LoadingBar
-          color="#a25e36"
-          progress={this.state.progress}
-          onLoaderFinished={() => this.setProgress(0)}
-        />
-        <Navbar querySelect={this.updateQuery} />
-        <News query={this.state.query} setProgress={this.setProgress} />
-      </>
-    );
-  }
-}
+export default App;
