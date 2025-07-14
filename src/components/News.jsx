@@ -92,6 +92,7 @@ const News = (props) => {
               <>
                 {Array.isArray(articles) &&
                   articles.map((element) => {
+                    if(!element) return null;
                     return (
                       <div className="col" key={element.url}>
                         <NewsItem
@@ -109,7 +110,7 @@ const News = (props) => {
                           imgsource={
                             element.urlToImage
                               ? element.urlToImage
-                              : "/logo512.png"
+                              : "/imgloading.png"
                           }
                           newsUrl={element.url}
                           loading={false}

@@ -31,7 +31,7 @@ export class NewsItem extends Component {
               </div>
             ) : (
               <>
-                <h5 className="card-title">{title}</h5>
+                <h5 className="card-title">{title?title:"loading"}</h5>
                 <p className="card-text">{description}</p>
                 <br></br>
                 <p
