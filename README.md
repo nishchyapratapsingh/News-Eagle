@@ -60,7 +60,7 @@
 3. Create a `local.env` file in the root and add your NewsAPI key:
 
    ```
-   REACT_APP_NEWS_API_KEY=your_api_key_here
+   REACT_APP_API_KEY=your_api_key_here
    ```
 
 4. Start the development server:
