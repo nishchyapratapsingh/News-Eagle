@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# 🦅 News Eagle
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**News Eagle** is a React-based web application that delivers the latest news headlines from around the world. It uses the [NewsAPI](https://newsapi.org) to fetch real-time news articles based on user-selected categories. The app features a clean UI, category switching, search functionality, loading indicators, and is built with performance and scalability in mind.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔧 Features
 
-### `npm start`
+* 🌍 Browse and search global news headlines
+* 📰 Category-based filtering (e.g. Business, Entertainment, Sports)
+* 🔄 Real-time data fetching with progress bar
+* 📱 Responsive design for desktop and mobile
+* ⚡ Optimized using functional components and hooks
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+* **Frontend:** React.js, React Hooks, Bootstrap
+* **Routing & Components:** React Router, Component-based architecture
+* **Loading UI:** `react-top-loading-bar`, Bootstrap placeholders
+* **API:** [NewsAPI.org](https://newsapi.org)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📸 Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Homepage](./assets/screenshot1.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🎥 Demo Video
 
-### `npm run eject`
+[Watch Demo on YouTube](https://www.youtube.com/watch?v=yCM9lcJ5w6E)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Node.js (v14 or above recommended)
+* npm
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repository:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   git clone https://github.com/nishchyapratapsingh/news-eagle.git
+   cd news-eagle
+   ```
 
-### Code Splitting
+2. Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+3. Create a `local.env` file in the root and add your NewsAPI key:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```
+   REACT_APP_NEWS_API_KEY=your_api_key_here
+   ```
 
-### Making a Progressive Web App
+4. Start the development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   npm start
+   ```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🌐 Deployment
 
-### Deployment
+To build the app for production:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm run build
+```
 
-### `npm run build` fails to minify
+You can deploy it using platforms like **Vercel**, **Netlify**, or **GitHub Pages**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+⚠️ *Note: NewsAPI’s free tier does not support public deployment. Use a backend proxy or upgrade your plan to host live.*
+
+---
+
+## 👨‍💻 Author
+
+**[Nishchya Pratap Singh](https://github.com/nishchyapratapsingh)**
+
+---
+
+## 📄 License
+
+This project is open-source under the [MIT License](LICENSE).
+
