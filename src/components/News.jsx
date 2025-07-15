@@ -9,6 +9,7 @@ const News = (props) => {
   const [page, setpage] = useState(1);
   const [catquery, setcatquery] = useState("world");
   const [totRes, settotRes] = useState(0);
+  const [totPage, settotpage] = useState(1);
 
   const APIKEY = process.env.REACT_APP_API_KEY;
 
@@ -24,6 +25,7 @@ const News = (props) => {
     setloading(false);
 
     settotRes(totalResultsAvlb);
+    settotpage(Math.ceil(totalResultsAvlb/18)-1);
     props.setProgress(100);
   };
 
@@ -58,11 +60,15 @@ const News = (props) => {
   };
 
   const fetchMoreData = async () => {
+   
     let nextPage = page + 1;
+    if (nextPage>totPage) return;
     let url = `https://newsapi.org/v2/everything?q=${catquery}&pageSize=18&apiKey=${APIKEY}&page=${nextPage}`;
     let data = await fetch(url);
     let parsedData = await data.json();
+    props.setProgress(100);
     setTimeout(() => {
+      
       setarticles(articles.concat(parsedData.articles));
       setpage(nextPage);
     }, 1500);
@@ -81,7 +87,7 @@ const News = (props) => {
             style={{ overflow: "hidden" }}
             dataLength={articles.length}
             next={fetchMoreData}
-            hasMore={articles.length >= totRes - 18 ? false : true}
+            hasMore={page+1 <= totPage}
             loader={
               <>
                 <Loading />
@@ -94,7 +100,7 @@ const News = (props) => {
                   articles.map((element) => {
                     if(!element) return null;
                     return (
-                      <div className="col" key={element.url}>
+                      <div className="col" key={element.publishedAt}>
                         <NewsItem
                           title={
                             element.title && element.title.length > 50
@@ -122,6 +128,7 @@ const News = (props) => {
               </>
             </div>
           </InfiniteScroll>
+          
         )}
       </div>
     </>
